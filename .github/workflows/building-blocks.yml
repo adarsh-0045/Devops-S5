@@ -11,6 +11,12 @@ jobs:
       - name: Say Hello
         run: echo "Hello, World!"
 
+      - name: Show Date
+        run: date
+
+      - name: Show Current Directory
+        run: pwd
+
   goodbye:
     needs: hello
     runs-on: ubuntu-latest
