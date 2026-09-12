@@ -1,0 +1,20 @@
+name: Expressions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  expressions-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show branch
+        run: echo "Branch is ${{ github.ref_name }}"
+
+      - name: Check main branch
+        if: ${{ github.ref_name == 'main' }}
+        run: echo "We are on the main branch!"
+
+      - name: Check test branch
+        if: ${{ github.ref_name == 'test-pull-request' }}
+        run: echo "We are on the test-pull-request branch!"
