@@ -1,0 +1,13 @@
+name: Workflow Events
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  show-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show Event
+        run: echo "This workflow was triggered by ${{ github.event_name }}"
