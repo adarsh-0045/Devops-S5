@@ -1,0 +1,20 @@
+name: Event Filters and Activity Types
+
+on:
+  pull_request:
+    types:
+      - opened
+      - closed
+      - reopened
+      - synchronize
+
+jobs:
+  pull-request-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show PR Activity
+        run: echo "Pull Request activity: ${{ github.event.action }}"
+
+      - name: Show Event
+        run: echo "Event: ${{ github.event_name }}"
