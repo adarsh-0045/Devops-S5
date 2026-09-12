@@ -2,6 +2,9 @@ name: Workflow Events
 
 on:
   push:
+    branches:
+      - main
+
   workflow_dispatch:
 
 jobs:
@@ -10,4 +13,7 @@ jobs:
 
     steps:
       - name: Show Event
-        run: echo "This workflow was triggered by ${{ github.event_name }}"
+        run: echo "Workflow triggered by ${{ github.event_name }}"
+
+      - name: Show Branch
+        run: echo "Branch is ${{ github.ref_name }}"
