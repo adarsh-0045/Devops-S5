@@ -14,7 +14,9 @@ jobs:
 
     steps:
       - name: Show PR Activity
-        run: echo "Pull Request activity: ${{ github.event.action }}"
+        run: |
+          echo "Pull Request activity: ${{ github.event.action }}"
 
       - name: Show Event
-        run: echo "Event: ${{ github.event_name }}"
+        run: |
+          echo "Event: ${{ github.event_name }}"
